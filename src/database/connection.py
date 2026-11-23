@@ -5,7 +5,7 @@ DB_PATH = os.path.join("data", "bank_simulator.db")
 DATA_DIR = "data"
 
 def init_database():
-    """Creează folderul data și tabelele bazei de date dacă nu există."""
+    """Creeaza folderul data și tabelele bazei de date daca nu exista."""
     if not os.path.exists(DATA_DIR):
         os.makedirs(DATA_DIR)
 
@@ -13,7 +13,6 @@ def init_database():
     conn.execute("PRAGMA foreign_keys = ON;")
     cursor = conn.cursor()
 
-    # 1. Tabelul utilizatorilor
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS users (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -27,7 +26,6 @@ def init_database():
         );
     """)
 
-    # 2. Tabelul conturilor bancare (cu noul IBAN RO24HEIS)
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS accounts (
             iban TEXT PRIMARY KEY,
@@ -41,7 +39,6 @@ def init_database():
         );
     """)
 
-    # 3. Tabelul tranzacțiilor
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS transactions (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -56,7 +53,6 @@ def init_database():
         );
     """)
 
-    # 4. Tabelul pentru logurile de audit
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS audit_logs (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -68,7 +64,6 @@ def init_database():
         );
     """)
 
-    # 5. Tabelul pentru beneficiari
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS beneficiaries (
             id INTEGER PRIMARY KEY AUTOINCREMENT,

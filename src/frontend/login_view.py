@@ -6,7 +6,6 @@ class LoginView(ctk.CTkFrame):
         self.on_login_success = on_login_success
         self.on_go_to_register = on_go_to_register
 
-        # Card central flotant (Alb curat)
         card = ctk.CTkFrame(
             self,
             fg_color="#FFFFFF",
@@ -18,7 +17,6 @@ class LoginView(ctk.CTkFrame):
         )
         card.place(relx=0.5, rely=0.5, anchor="center")
 
-        # Badge brand violet pal
         brand_badge = ctk.CTkFrame(card, fg_color="#F3E8FF", corner_radius=15, height=42)
         brand_badge.pack(pady=(25, 10), padx=40, fill="x")
 
@@ -30,7 +28,6 @@ class LoginView(ctk.CTkFrame):
         )
         brand_label.pack(pady=8)
 
-        # Mesaj de întâmpinare
         title_label = ctk.CTkLabel(
             card, 
             text="Bine ai revenit! 👋", 
@@ -47,7 +44,6 @@ class LoginView(ctk.CTkFrame):
         )
         subtitle_label.pack(pady=(0, 15))
 
-        # Email
         email_label = ctk.CTkLabel(card, text="📧 Adresă de email", font=ctk.CTkFont(size=12, weight="bold"), text_color="#334155")
         email_label.pack(anchor="w", padx=40, pady=(0, 4))
 
@@ -64,7 +60,6 @@ class LoginView(ctk.CTkFrame):
         )
         self.email_entry.pack(pady=(0, 10), padx=40)
 
-        # Parolă
         pass_label = ctk.CTkLabel(card, text="🔑 Parolă secretă", font=ctk.CTkFont(size=12, weight="bold"), text_color="#334155")
         pass_label.pack(anchor="w", padx=40, pady=(0, 4))
 
@@ -82,7 +77,6 @@ class LoginView(ctk.CTkFrame):
         )
         self.password_entry.pack(pady=(0, 5), padx=40)
 
-        # Label erori
         self.error_label = ctk.CTkLabel(
             card, 
             text="", 
@@ -91,7 +85,6 @@ class LoginView(ctk.CTkFrame):
         )
         self.error_label.pack(pady=(0, 2))
 
-        # Buton de conectare (Violet cu efect hover închis)
         login_btn = ctk.CTkButton(
             card, 
             text="Autentificare în siguranță 🚀", 
@@ -106,7 +99,6 @@ class LoginView(ctk.CTkFrame):
         )
         login_btn.pack(pady=(5, 5), padx=40)
         
-        # Buton navigare spre Înregistrare
         reg_nav_btn = ctk.CTkButton(
             card,
             text="Nu ai cont? Creează unul nou ✨",
